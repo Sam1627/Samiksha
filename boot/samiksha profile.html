@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <title>my profile</title>
+  <style type="text/css">
+    /*  scrollbarr css  */
+    ::-webkit-scrollbar {
+      height: 0;
+      //width: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background:  black;
+      /*  background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)*/
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #00d7c3;
+      box-shadow: 0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3),
+        0 0 100px rgba(18, 247, 255, 0.3),
+        0 0 150px rgba(18, 247, 255, 0.3);
+      border-radius: 0.8rem;
+    }
+
+    /*ends*/
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      font-family: poppins, sans-serif;
+      background: black;
+      height: 100vh;
+      align-items: center;
+      color: white;
+      overflow-x: hidden;
+      text-transform: uppercase;
+    }
+
+/* loader */
+
+#preloader{
+       width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      position: absolute;
+}
+
+#container{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-items: bottom;
+    }
+    .ring{
+      width: 200px;
+      height: 200px;
+      border: 0px solid black;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .ring:nth-child(1){
+      border-bottom-width:8px ;
+      border-color: rgb(255, 0, 255);
+      animation: rotate1 2s linear infinite;
+    }
+
+    .ring:nth-child(2){
+      border-right-width:8px ;
+      border-color: rgb(0, 247, 255);
+      animation: rotate2 2s linear infinite;
+    }
+
+    .ring:nth-child(3){
+      border-left-width:8px ;
+      border-color: rgb(0, 255, 13);
+      animation: rotate3 2s linear infinite;
+    }
+    .loading{
+      color: white;
+    }
+    @keyframes rotate1{
+      0%{
+        transform: rotatex(35deg) rotateY(-45deg) rotateZ(0deg);
+      }
+      100%{
+        transform: rotatex(35deg) rotateY(-45deg) rotateZ(360deg);
+      }
+    }
+
+    @keyframes rotate2{
+      0%{
+        transform: rotatex(50deg) rotateY(10deg) rotateZ(0deg);
+      }
+      100%{
+        transform: rotatex(50deg) rotateY(-10deg) rotateZ(360deg);
+      }
+    }
+
+    @keyframes rotate3{
+      0%{
+        transform: rotatex(35deg) rotateY(55deg) rotateZ(0deg);
+      }
+      100%{
+        transform: rotatex(35deg) rotateY(55deg) rotateZ(360deg);
+      }
+    }
+
+
+/*ends*/
+     .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px 10%;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    #sam {
+      color: #00d7c3;
+      font-size: 30px;
+      font-weight: 700;
+
+    }
+
+    #navlist {
+      display: flex;
+    }
+
+    #navlist a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 10px 20px;
+    }
+
+    #navlist a:hover {
+      color: #00d7c3;
+      box-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3),
+        0 0 100px rgba(18, 247, 255, 0.3),
+        0 0 150px rgba(18, 247, 255, 0.3);
+    }
+
+    /*hero css start*/
+    #hero {
+      width: 100%;
+      height: 100vh;
+/*      background: url("c.gif");*/
+      background: url("m.gif");
+      background-size: cover;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      #hero {
+        padding-left: 160px;
+      }
+    }
+
+    #hero:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    /*hero css ends*/
+
+    .slider-img {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      transform-style: preserve-3d;
+      animation: moving 20s linear infinite;
+    }
+
+    @media (min-width: 992px) {
+      .slider-img {
+        padding-left: 160px;
+      }
+    }
+
+    @keyframes moving {
+      0% {
+        transform: perspective(1100px) rotateY(0deg);
+      }
+
+      100% {
+        transform: perspective(1100px) rotateY(360deg);
+      }
+    }
+
+    .slider-img span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+    }
+
+    .slider-img span img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      border:4px solid black;
+       box-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3);
+/*        0 0 70px rgba(18, 247, 255, 0.3),*/
+/*        0 0 80px rgba(18, 247, 255, 0.3),*/
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 150px rgba(18, 247, 255, 0.3);*/
+      object-fit: cover;
+      transition: 2s;
+    }
+
+    .slider-img span img:hover {
+      transform: scale(1.3);
+    }
+
+    /*ends*/
+
+    /*button*/
+    .btn-box {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 1.9rem;
+      width: 320px;
+      height: 45px;
+    }
+
+    .btn-box a.btn {
+
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 50px;
+      background: #00d7c3;
+      color: white;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-weight: 100;
+      transition: .6s;
+      box-shadow:  0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3);
+/*        0 0 70px rgba(18, 247, 255, 0.3),*/
+/*        0 0 80px rgba(18, 247, 255, 0.3),*/
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 150px rgba(18, 247, 255, 0.3);*/
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: 2px solid #00d7c3;
+    }
+
+    a.btn:hover {
+      color: black;
+    }
+
+    a.btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #00d7c3;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: .4s;
+    }
+
+    a.btn:hover::before {
+      width: 100%;
+    }
+
+    a.btn:nth-child(2) {
+      background:#00d7c3;
+/*      color:white;*/
+    }
+
+    a.btn:nth-child(2):hover {
+      color: black;
+    }
+
+    a.btn:nth-child(2)::before {
+      background: #00d7c3;
+
+
+    }
+
+
+    .social-icons {
+      margin-top: 2rem;
+      margin-left: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      width: 226px;
+      height: 40px;
+    }
+
+
+    .social-icons a {
+
+      display: inline-flex;
+      width: 50px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      background: #00d7c3;
+      color: white;
+      border: 2px solid #00d7c3;
+      transform: .6s;
+      box-shadow:  0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3);
+/*        0 0 70px rgba(18, 247, 255, 0.3),*/
+/*        0 0 80px rgba(18, 247, 255, 0.3),*/
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 150px rgba(18, 247, 255, 0.3);*/
+      border-radius: 5px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+
+
+    .social-icons a i {
+
+      font-size: 1.2rem;
+    }
+
+    .social-icons a:hover {
+      color: black;
+    }
+
+    .social-icons a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background:#00d7c3;
+      width:100%;
+      height: 100%;
+      z-index: -1;
+      transition: .4s;
+    }
+
+    .social-icons a:hover::before {
+      width: 100%;
+    }
+
+    /*button ends*/
+    /*about section*/
+
+    .setion-1 {
+      padding: 20vmin;
+
+    }
+
+    .setion-1 .row .col-md-6 .pray img {
+      opacity: 0.7;
+      /*  width: 70%;*/
+      border-radius: 0.2em;
+
+    }
+
+
+
+
+    #panel {
+/*      position: relative;*/
+      top: 30vmin;
+      left: 10vmin;
+      background: black;
+      border-radius: 15px;
+      width: 100%;
+      height:85%;
+      margin-left: 0%;
+      margin-right: 0%;
+/*      margin-top:5%;*/
+      text-align: left;
+      padding: 10vmin 5vmin 10vmin 10vmin;  
+      color: #00d7c3;
+      box-shadow:  0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3);
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 150px rgba(18, 247, 255, 0.3);*/
+      font-family: allergian;
+/*      z-index: 1;*/
+    }
+
+    #panel h1 {
+/*        color: b;*/
+      font-weight: bold;
+      /*  padding: 0.4em 0;*/
+      font-size: 2em;
+    }
+
+    #panel p {
+      font-size: 0.9em;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    /*ends*/
+
+    /*education section*/
+
+    .glow-on-hover {
+      width: 130px;
+      height: 50px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: #111;
+      box-shadow:  0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3);
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 150px rgba(18, 247, 255, 0.3);*/
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+    }
+
+    .glow-on-hover:before {
+      content: '';
+      background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+      color: #000;
+    }
+
+    .glow-on-hover:active:after {
+      background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .main-text {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .main-text h1 {
+      margin-top: 100px;
+      font-weight: 600;
+      font-family: arialblack;
+      font-size: 4rem;
+      z-index:1;
+
+    }
+
+    .main-text span {
+      color: white;
+      font-size: .5rem;
+      font-size: 200;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-services {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      grid-gap: 2rem;
+    }
+
+    .section-services .service-box {
+      flex: 1 1 18rem;
+      padding: 2rem 1rem 2rem;
+      text-align: center;
+      background: black;
+      box-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3);
+/*        0 0 70px rgba(18, 247, 255, 0.3),*/
+/*        0 0 80px rgba(18, 247, 255, 0.3),*/
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 150px rgba(18, 247, 255, 0.3);*/
+      transition: transform .2s;
+      border-radius: 7%;
+    }
+
+    .slide {
+      width: auto;
+      justify-content: center;
+    }
+
+    .service-box:hover {
+      transform: translateY(-.7rem);
+      transform: scale(1.1);
+    }
+
+    .service-icon {
+      border: 2px solid white;
+      margin-left: 130px;
+      padding: 2rem;
+      height: 25px;
+      width: 30px;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      border-radius: 50px;
+      position: relative;
+      color:#00d7c3;
+      box-shadow:  0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3);
+/*        0 0 70px rgba(18, 247, 255, 0.3),*/
+/*        0 0 80px rgba(18, 247, 255, 0.3),*/
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 150px rgba(18, 247, 255, 0.3);*/
+      outline: 5px double; #00d7c3;
+
+    }
+
+    .service-box {
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+
+    .service-box p {
+      margin: .5rem 0 1.5rem 0;
+      font-weight:1rem;
+      letter-spacing: 1px;
+      color: white;
+      line-height: 1.6;
+    }
+
+ .service-icon:hover{
+      transform: scale(1.1);
+
+ }
+
+    /*ends*/
+    /* Stylingthe last h2 tag by giving margin bottom */
+
+
+
+      #main-text {
+      width: 100%;
+      margin-top: 100px;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: white;
+      z-index: 1;
+      font-weight: 600;
+      font-size: 4rem;
+      justify-content: center;
+    }
+
+    .skills-bar-container:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    /* Styling the h2 tag by giving color, 
+    letter spacing, font-size etc.*/
+    .skills-bar-container h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eee;
+/*      margin-left: -50%;*/
+      letter-spacing: 1px;
+      font-size: 25px;
+    }
+
+    /* Styling the border and box
+    effect of the progress bar*/
+    .skills-bar {
+      width: 700px;
+      height: 10px;
+      margin-top: 15px;
+/*      margin-left: -50%;*/
+      border: 1px solid #00d7c3;
+      border-radius: 5px;
+      box-shadow:  0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3),
+        0 0 100px rgba(18, 247, 255, 0.3),
+        0 0 120px rgba(18, 247, 255, 0.3),
+/*        0 0 140px rgba(18, 247, 255, 0.3).*/
+        0 0 150px rgba(18, 247, 255, 0.3);
+    }
+
+    /* Stylingthe background color of each 
+    animation and border radius */
+    .percentage {
+      display: block;
+      height: 100%;
+      background-color: #00d7c3;
+      border-radius: 5px;
+      animation: skills 5s ease-in 1;
+    }
+
+    /* Assigning width of each languages*/
+    .c {
+      width: 85%;
+    }
+
+    .html {
+      width: 50%;
+    }
+
+    .css {
+      width: 75%;
+    }
+
+    .bootstrap {
+      width: 65%;
+    }
+
+    /* Animating the progress bar by 
+    initially starting from 0*/
+    @keyframes skills {
+      from {
+        width: 0;
+      }
+    }
+
+    /*ends*/
+
+
+/*   go to top button */
+.scrollToTopBtn {
+  background-color:black;
+  box-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3),
+        0 0 40px rgba(18, 247, 255, 0.3),
+        0 0 70px rgba(18, 247, 255, 0.3),
+        0 0 80px rgba(18, 247, 255, 0.3),
+        0 0 100px rgba(18, 247, 255, 0.3),
+        0 0 120px rgba(18, 247, 255, 0.3),
+/*        0 0 140px rgba(18, 247, 255, 0.3).*/
+        0 0 150px rgba(18, 247, 255, 0.3); ;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 48px;
+  width: 48px;
+    /* place it at the bottom right corner */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+    /* keep it on top of everything else */
+  z-index: 100;
+    /* hide with opacity */
+  opacity: 0;
+    /* also add a translate effect */
+  transform: translateY(100px);
+    /* and a transition */
+  transition: all .5s ease
+}
+    
+.showBtn {
+  opacity: 1;
+  transform: translateY(0)
+}
+
+
+
+
+/*ends*/
+
+
+#card{
+      box-shadow:  0 0 10px rgba(18, 247, 255, 0.3),
+        0 0 20px rgba(18, 247, 255, 0.3),
+        0 0 30px rgba(18, 247, 255, 0.3);
+/*        0 0 40px rgba(18, 247, 255, 0.3);*/
+/*        0 0 70px rgba(18, 247, 255, 0.3);*/
+/*        0 0 80px rgba(18, 247, 255, 0.3);*/
+/*        0 0 100px rgba(18, 247, 255, 0.3),*/
+/*        0 0 120px rgba(18, 247, 255, 0.3);*/
+/*        0 0 140px rgba(18, 247, 255, 0.3).*/
+/*        0 0 150px rgba(18, 247, 255, 0.3); */
+}
+/*ends*/
+
+
+
+/*text*/
+
+.glow {
+    
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    animation: glow-animation 1s infinite alternate;
+}
+
+@keyframes glow-animation {
+    0% {
+        text-shadow: 0 0 5px #00d7c3, 0 0 5px #00d7c3, 0 0 15px #00d7c3, 0 0 20px #00d7c3;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #00d7c3, 0 0 10px #00d7c3, 0 0 30px #00d7c3, 0 0 40px #00d7c3;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #00d7c3, 0 0 5px #00d7c3, 0 0 15px #00d7c3, 0 0 20px #00d7c3;
+    }
+}
+/*ends*/
+</style>
+</head>
+
+<body>
+
+<!-- loader -->
+
+<div id="preloader">
+  <div id="container">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <span class="loading">loading....</span>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+  setTimeout(function() {
+    $('#container').addClass('loaded');
+    if ($('#container').hasClass('loaded')) {
+      $('#preloader').delay(9000).queue(function() {
+        //$(this).remove();
+      });}
+  }, 3000);});
+
+</script>
+
+</html>
+<!-- ends -->
+    <button class="scrollToTopBtn">☝️</button>
+ <script type="text/javascript">
+   var scrollToTopBtn = document.querySelector(".scrollToTopBtn")
+var rootElement = document.documentElement
+
+function handleScroll() {
+  // Do something on scroll - 0.15 is the percentage the page has to scroll before the button appears
+  // This can be changed - experiment
+  var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+  if ((rootElement.scrollTop / scrollTotal ) > 0.15) {
+    // Show button
+    scrollToTopBtn.classList.add("showBtn")
+  } else {
+    // Hide button
+    scrollToTopBtn.classList.remove("showBtn")
+  }
+}
+
+function scrollToTop() {
+  // Scroll to top logic
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+}
+scrollToTopBtn.addEventListener("click", scrollToTop)
+document.addEventListener("scroll", handleScroll)
+ </script>
+</html>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- navbar section start  -->
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="navbar navbar-expand-sm bg-transparent fixed-top"style="background: black !important; opacity:0.5;">
+            <div class="logo"data-aos="fade-right"><span id="sam">S</span>am.</div>
+            <button type="button" class="navbar-toggler text-light" data-bs-toggle="collapse" data-bs-target="#navbar">
+              <span class="navbar-toggler-icon "><i class="bi bi-three-dots-vertical"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbar">
+              <ul class="navbar-nav " id="navlist">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#nn">ABOUT</a></li>
+                <li><a href="#nn1">EDUCATION</a></li>
+                <li><a href="#nn2">SKILLS</a></li>
+                <!-- <li><a href="#nn5">PROJECTS</a></li> -->
+                <li><a href="#nn3">GALLERY</a></li>
+                <li><a href="#nn4">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+        </nav>
+      </div>
+    </div>
+    <!-- navbar ends -->
+    <!-- hero section -->
+    <section id="hero" class="d-flex flex-column justify-content-center">
+      <div class="container">
+        <h1 class="glow"data-aos="fade-right"data-aos-duration="2000">SAMIKSHA SHARMA</h1>
+        <h4 data-aos="fade-up"id="#"data-aos-duration="2000">I Am College Student</h4>
+      </div>
+      <div class="btn-box">
+        <a href="" class="btn">Resume!!</a>
+        <a href="" class="btn">Hire Me!!</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/littlequ_ee_n11?igsh=MWU4ZGt6cXRrZW1yYw=="><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-snapchat"></i></a>
+        <a href="www.youtube.com/@Samiksha633"><i class="bi bi-youtube"></i></a>
+        <a href="#"><i class="bi bi-telegram"></i></a>
+      </div>
+    </section>
+  </div>
+  </div>
+  <!-- ends -->
+  <!-- about section -->
+  <section class="section-1" id="nn">
+    <div class="container text-center">
+      <div class="row ">
+        <div class="col-lg-6 col-md-5 col-sm-4">
+          <div class="pray"data-aos="fade-right"data-aos-offset="300"data-aos-easing="ease-in-sine" style="margin-top: 90px; z-index: 1;">
+            <img src="1.jpg" alt="pray" style="width:70%; height:30%;">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-5 col-sm-12" >
+          <div id="panel"data-aos="fade-left" data-aos-offset="300"data-aos-easing="ease-in-sine"style="margin-top: 90px; z-index: 1;">
+            <h1>Let Me Introduce Myself</h1>
+            <p class="pt-4">I am <b>SAMIKSHA SHARMA</b> I have completed my senior schooling from RBSE
+              Board . So,Recently I am doing bachelor's Of Computer Application <b>(BCA)</b> from Ajmer(Raj.) Star
+              Infotech college.
+               <br>I make some videos on my Youtube Channel.
+               <br />I like to work in challenging environment demanding all my skills and efforts to explore
+              and adapt my self in different fields and realise my potential where I get the possibility for continuous
+              learning.
+            </p>
+             <div class="row mb-3 " >
+                        <div class="col-sm-6 py-2"><h6 style="color: white !important;">Name : <span style="font-size:18px; ;color:white;">Samiksha</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 style="color: white !important;">DOB : <span style="font-size:18px;color:white;">27 June 2005</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 style="color: white !important;">Phone : <span style="font-size:18px;color:white;">+91 9352887831</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 style="color: white !important;">Citizen : <span style="font-size:18px;color:white;">Indian</span></h6></div>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ends -->
+  <!-- education section start -->
+  <section id="services" class="service">
+    <div class="container text-center">
+      <div class="row">
+        <div class="main-text mt-5"  data-aos="fade-right" id="nn1">
+          <h1>EDUCATION</h1>
+        </div>
+
+        <div class="section-services"data-aos="fade-up">  
+          <div class="service-box">
+            <i class="bi bi-code-slash service-icon"></i>
+            <p>I Am doing Bachelor of Computer (B.C.A) <br />
+              From Star Infotech College
+            </p>
+          </div>
+           <div class="service-box">
+            <i class="bi bi-backpack3 service-icon"></i>
+            <p>In 2022-2023 I Was Completed My 12th <br />
+              From St Jhon's Sr.Sec.School
+            </p>
+          </div>
+           <div class="service-box col-sm-12">
+            <i class="bi bi-backpack-fill service-icon"></i>
+            <p>In 2020-2021 I Was Completed My 10th <br />
+              From LAWRENCE AND MAYO Sr.Sec.School
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br>
+  <!-- ends -->
+  <!-- skills section start -->
+
+  <div class="container-fluid py-5" id="qualification">
+    <div class="container">
+      <div class="position-relative d-flex align-items-center justify-content-center">
+    
+
+        <div class="row">
+          <div class="col-lg-11 ml-5"id="nn2">
+            <h1 style="color: white !important;  font-family: arialblack;"data-aos="fade-right" id="main-text" class="justify-content-center align-items-center mr-5">TECHNICAL SKILLS</h1>
+
+            <div class="skills "data-aos="fade-up">
+              <div class="skills-bar-container">
+                <h2>C-PROGRAMMING</h2>
+                <div class="skills-bar">
+                  <span class="percentage c"></span>
+                </div>
+              </div>
+
+              <div class="skills-bar-container">
+                <h2>HTML</h2>
+                <div class="skills-bar">
+                  <span class="percentage html"></span>
+                </div>
+              </div>
+
+              <div class="skills-bar-container">
+                <h2>CSS</h2>
+                <div class="skills-bar">
+                  <span class="percentage css"></span>
+                </div>
+              </div>
+
+              <div class="skills-bar-container">
+                <h2>BOOTSTRAP</h2>
+                <div class="skills-bar">
+                  <span class="percentage bootstrap"></span>
+                </div>
+              </div>
+    </div>  
+  </div>
+  </div>
+</div>
+
+  <!-- ends -->
+  <!-- gallery section start -->
+  <div class="row">
+      <div class="col-lg-11 ml-5"id="nn3">
+            <h1 style="color: white !important;  font-family: arialblack; font-weight:20px;"data-aos="fade-right" id="main-text" class="justify-content-center align-items-center mr-5">Gallery</h1>
+            <br><br><br><br>
+        </div>
+  </div>
+  <div class="container slider-img">
+    <span style="--i:1;"><img src="4.jpg" class="img-fluid" /></span>
+    <span style="--i:2;"><img src="02.jpg" class="img-fluid" /></span>
+    <span style="--i:3;"><img src="k.jpg" class="img-fluid" /></span>
+    <span style="--i:4;"><img src="sam5.jpg" class="img-fluid" /></span>
+    <span style="--i:5;"><img src="s7.jpg" class="img-fluid" /></span>
+    <span style="--i:6;"><img src="8.png" class="img-fluid" /></span>
+    <span style="--i:7;"><img src="s.webp" class="img-fluid" /></span>
+    <span style="--i:8;"><img src="sam10.jpg" class="img-fluid" /></span>
+  </div>
+
+
+  <!-- ends -->
+  <div class="container-fluid py-5" >
+    <div class="container" data-aos="fade-right"id="nn4">   
+      <div class="col-lg-11 ml-5">
+        <br>
+            <h1 style="color: white !important;  font-family: arialblack; font-weight:20px;"data-aos="fade-right" id="main-text" class="justify-content-center align-items-center mr-5">Contact</h1>
+        </div>
+      <div class="row">
+        <div class="getintouch col-md-5 col-sm-4">
+          <div class="contact">
+            <div class="first-text text-white mb-5 mt-5"><b>Let's get in touch!</b></div>
+          </div>
+          <div class="box mt-5">
+            <!-- <div class="icon mt-2"><img src="phone.png"/></div> -->
+            <div class="text mt-4">
+              <h3>Phone Number:</h3>
+              <p>(91+)9352887831</p>
+            </div>
+          </div>
+          <div class="box mt-4">
+            <!-- <div class="icon mt-2"><img src="email.png"/></div> -->
+            <div class="text mt-4">
+              <h3>Email:</h3>
+              <p>Samikshasharma16468@gmail.com</p>
+            </div>
+          </div>
+          <div class="box mt-4">
+            <!-- <div class="icon mt-2"><img src="link.png"/></div> -->
+            <div class="text mt-4">
+              <h3>Address</h3>
+              <p>Kalyanipura road / Ajmer(RAJ.)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="connect col-md-7 col-sm-7">
+          <div class="card-body"  id="card" data-aos="fade-left" data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+            <form class="">
+              <div class="col-lg-12">
+                <div class="form-floating">
+                  <input type="text" name="" class="form-control rounded bg-black text-white" placeholder="Name" />
+                  <label class="form-label text-white">Name</label>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-floating mt-4">
+                  <input type="email" name="" class="form-control rounded bg-black text-white" placeholder="email" />
+                  <label class="form-label text-white">Email</label>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-floating mt-4">
+                  <input type="text" name="" class="form-control rounded bg-black text-white" placeholder="Name" />
+                  <label class="form-label text-white">Subject</label>
+                </div>
+              </div>
+
+
+              <div class="col-lg-12 mt-3">
+                <div class="form-floating mt-4">
+                  <input type="text" name="" class="form-control rounded bg-black text-white" placeholder="Message" style="height:150px;" />
+                  <label class="form-label text-white">Message</label>
+                  <!-- <textarea class="form-control rounded bg-black text-white" id="floatingtextarea" placeholder="Message"
+                    style="height:150px">Message</textarea>
+ -->                  <!-- <label for="floatingtextarea text-light">Message</label> -->
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="btn-box mt-4" style="margin-left: 250px;">
+            <a href="" class="btn">Send!!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER SECTION -->
+  <div class="container-fluid text-white" style="background-color: black; height: 45px;">
+    <div class="row text-center py-4">
+      <div class="col-lg-12 col-md-12">
+        <p class="m-0" style="color: white !important;">&copy; <a class="text-white font-weight-bold" href="#">Copy
+            Right</a>. All Rights Reserved. Designed by <br><a class="text-white font-weight-bold" href="#">SAMIKSHA
+            SHARMA</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+</body>
+</html>
+ 
+
+<script>
+      AOS.init( {
+        offset: 120,
+        duration: 1000,
+      });
+
+</script>
